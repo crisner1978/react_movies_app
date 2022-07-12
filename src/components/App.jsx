@@ -1,14 +1,32 @@
-import React from 'react';
-import { CssBaseline } from '@mui/material';
-// import { Route, Switch } from 'react-router-dom';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import { Actors, MovieInfo, Movies, Profile } from './'
+import useStyles from './styles'
 
 const App = () => {
-  return (
-    <div>
-        <CssBaseline />
-        <h1>React Movies App - CWR</h1>
-    </div>
-  )
-}
+  const classes = useStyles();
 
-export default App
+  return (
+    <div className={classes.root}>
+      <main className={classes.content}>
+      <div className={classes.toolbar} />
+        <Switch>
+          <Route exact path='/movie/:id'>
+            <MovieInfo />
+          </Route>
+          <Route exact path='/actors/:id'>
+            <Actors />
+          </Route>
+          <Route exact path='/'>
+            <Movies />
+          </Route>
+          <Route exact path='/profile/:id'>
+            <Profile />
+          </Route>
+        </Switch>
+      </main>
+    </div>
+  );
+};
+
+export default App;
