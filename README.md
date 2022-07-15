@@ -19,6 +19,7 @@ Reactflix Movies App to search movies, save movies to favorites, create a movies
 
 ### Technologies Used
 - React JS ^17.02 Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-- Material UI - [MUI](https://mui.com/material-ui/getting-started/installation/)
-- Material UI / [Styles](https://mui.com/system/styles/basics/)
-- Material UI / [Icons Material](https://mui.com/material-ui/material-icons/#main-content)
+- [@mui](https://mui.com/material-ui/getting-started/installation/) Material UI
+- [@mui/styles](https://mui.com/system/styles/basics/) Styles
+- [@mui/icons-material](https://mui.com/material-ui/material-icons/#main-content) Icons
+-  [Redux Toolkit + RTK Query]
