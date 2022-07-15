@@ -41,4 +41,20 @@ or
 ```
 yarn install
 ```
+#### 3. Setup Account with TMDB & ALAN
+Go here [TMDB](https://www.themoviedb.org/signup?language=en-US) to set up a account then you will need to request a API KEY.
 
+Go here [ALAN](https://alan.app/) to set up a free account. Once you create a new project, you will see in 'Integrations' button where you can find the code to implement into your project.
+
+#### 4. Set Environment Variables
+You'll need to set your TMDB API key in the environment variable file so your project runs correctly. Rename `.example.env` file to `.env` and place your TMDB API key there. Be sure to remove the '#' sign prepending the variable names.
+
+#### 5. Run The App
+To start the app 
+```
+npm start
+```
+or
+```
+yarn start
+```
