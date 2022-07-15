@@ -2,7 +2,7 @@
 
 Reactflix Movies App to search movies, save movies to favorites, create a movies watchlist and browse movies by categories to include several genres.
 
-## Main Features
+## Main Features:
 
 - Consumes [TMDB](https://www.themoviedb.org/) APIs
 - [Authentication](https://developers.themoviedb.org/3/getting-started/authentication) via The Movie Database API
@@ -17,7 +17,7 @@ Reactflix Movies App to search movies, save movies to favorites, create a movies
 - Add or Remove Movies to/from Favorites
 - Voice capabilities to search & navigate using [Alan](https://alan.app/)
 
-### Technologies Used
+### Tech Stack:
 - [React JS](https://reactjs.org/docs/getting-started.html) v17.02 Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 - [Material UI](https://mui.com/material-ui/getting-started/installation/) 
 - [Material Styles](https://mui.com/system/styles/basics/) 
@@ -28,4 +28,14 @@ Reactflix Movies App to search movies, save movies to favorites, create a movies
 - [React-Router V5](https://v5.reactrouter.com/web/guides/quick-start)
 - [Alan AI - React](https://alan.app/docs/client-api/web/react/)
 - [AXIOS](https://axios-http.com/docs/intro)
+
+### Getting Setup:
+#### 1. Get the source code
+You need to clone the master branch of then navigate to the project folder.
+#### 2. Install dependencies
+You will need to install the dependencies listed in the package.json
+```
+npm install or yarn install
+
+```
 
