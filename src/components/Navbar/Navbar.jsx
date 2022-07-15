@@ -1,28 +1,19 @@
-import React, { useState } from "react";
 import {
-  AppBar,
-  IconButton,
-  Toolbar,
-  Drawer,
-  Button,
-  Avatar,
-  useMediaQuery,
-} from "@mui/material";
-import {
-  Menu,
-  AccountCircle,
-  Brightness7,
-  Brightness4,
+  AccountCircle, Brightness4, Brightness7, Menu
 } from "@mui/icons-material";
-import useStyles from "./styles";
+import {
+  AppBar, Avatar, Button, Drawer, IconButton,
+  Toolbar, useMediaQuery
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { Link } from "react-router-dom";
-import { Sidebar, Search } from "..";
-import { fetchToken, getSessionId, moviesApi } from "../../utils";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser, userSelector } from "../../features/authSlice";
+import { Link } from "react-router-dom";
+import { Search, Sidebar } from "..";
 import useDarkMode from "../../context/darkModeContext";
+import { setUser, userSelector } from "../../features/authSlice";
+import { fetchToken, getSessionId, moviesApi } from "../../utils";
+import useStyles from "./styles";
 
 const Navbar = () => {
   const { isAuthenticated, user, profileImg } = useSelector((userSelector))
@@ -81,13 +72,12 @@ const Navbar = () => {
                 component={Link}
                 to={`/profile/${user.id}`}
                 className={classes.linkButton}
-                onClick={() => {}}
               >
                 {!isMobile && <>{user.username || 'My Movies'} &nbsp;</>}
                 <Avatar
                   style={{ width: 36, height: 36 }}
                   alt="Profile"
-                  src={profileImg ? `https://www.themoviedb.org/t/p/w32_and_h32_face${profileImg}` : 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'}
+                  src={profileImg ? `https://www.themoviedb.org/t/p/w64_and_h64_face${profileImg}` : 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'}
                 />
               </Button>
             )}

@@ -16,6 +16,7 @@ import { useGetGenresQuery } from "../../services/TMDB";
 import genreIcons from "../../assets/genres";
 import { useDispatch, useSelector } from "react-redux";
 import { selectGenIdOrCat } from "../../features/genreOrCategory";
+import { useEffect } from "react";
 
 const Sidebar = ({ setMobileOpen }) => {
   const classes = useStyles();
@@ -24,6 +25,9 @@ const Sidebar = ({ setMobileOpen }) => {
   const dispatch = useDispatch();
   const { genIdOrCatName } = useSelector((state) => state.genreOrCategory);
 
+  useEffect(() => {
+    setMobileOpen(prev => !prev)
+  }, [genIdOrCatName])
 
   const categories = [
     { label: "Popular", value: "popular" },

@@ -1,10 +1,12 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import useAlan from "../hooks/useAlan";
 import { Actors, MovieInfo, Movies, Navbar, Profile } from "./";
 import useStyles from "./styles";
 
 const App = () => {
   const classes = useStyles();
+  useAlan()
 
   return (
     <div className={classes.root}>

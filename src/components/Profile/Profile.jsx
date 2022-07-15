@@ -4,10 +4,13 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { userSelector } from "../../features/authSlice";
 import { useGetListQuery } from "../../services/TMDB";
-import { RatedCards } from '..'
+import { RatedCards } from "..";
+import { logout } from "../../utils";
+import { useHistory } from "react-router-dom";
 
 const Profile = () => {
   const { isAuthenticated, user } = useSelector(userSelector);
+  const history = useHistory();
 
   const { data: favoriteMovies, refetch: refetchFavs } = useGetListQuery({
     listName: "favorite/movies",
@@ -23,15 +26,17 @@ const Profile = () => {
   });
 
   useEffect(() => {
-    refetchFavs()
-    refetchWatch()
-  }, [refetchFavs, refetchWatch])
-  
+    if (!isAuthenticated) {
+      history.replace("/");
+    }
+  }, [history, isAuthenticated]);
 
-  const logout = () => {
-    localStorage.clear();
-    window.location.href = "/";
-  };
+  useEffect(() => {
+    if (isAuthenticated) {
+      refetchFavs();
+      refetchWatch();
+    }
+  }, [isAuthenticated, refetchFavs, refetchWatch]);
 
   return (
     <Box>

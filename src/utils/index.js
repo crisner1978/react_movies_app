@@ -36,3 +36,8 @@ export const getSessionId = async () => {
     }
   }
 };
+
+export const logout = () => {
+  localStorage.clear();
+  window.location.href = "/";
+};
