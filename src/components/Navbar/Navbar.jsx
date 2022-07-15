@@ -22,20 +22,16 @@ import { fetchToken, getSessionId, moviesApi } from "../../utils";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser, userSelector } from "../../features/authSlice";
+import useDarkMode from "../../context/darkModeContext";
 
 const Navbar = () => {
   const { isAuthenticated, user, profileImg } = useSelector((userSelector))
   const [mobileOpen, setMobileOpen] = useState(false);
   const dispatch = useDispatch()
-
-  
-
   const classes = useStyles();
   const isMobile = useMediaQuery("(max-width:600px)");
   const theme = useTheme();
-
-  console.log("user", profileImg)
-  
+  const { toggleDarkMode } = useDarkMode()
   const token = localStorage.getItem('request_token')
   const sessionIdLocal = localStorage.getItem('session_id')
 
@@ -70,7 +66,7 @@ const Navbar = () => {
               <Menu />
             </IconButton>
           )}
-          <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {}}>
+          <IconButton color="inherit" sx={{ ml: 1 }} onClick={toggleDarkMode}>
             {theme.palette.mode === "dark" ? <Brightness7 /> : <Brightness4 />}
           </IconButton>
           {!isMobile && <Search />}

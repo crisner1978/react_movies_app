@@ -1,23 +1,20 @@
 import { CssBaseline } from "@mui/material";
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
 import store from "../app/store";
+import { DarkModeProvider } from "../context/darkModeContext";
 
 const AppProviders = ({ children }) => {
-  const theme = createTheme({});
-
   return (
     <Provider store={store}>
       <Router>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {children}
-      </ThemeProvider>
-    </Router>
+        <DarkModeProvider>
+          <CssBaseline />
+          {children}
+        </DarkModeProvider>
+      </Router>
     </Provider>
-    
   );
 };
 

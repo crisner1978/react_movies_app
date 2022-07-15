@@ -23,7 +23,7 @@ const Sidebar = ({ setMobileOpen }) => {
   const { data, isFetching } = useGetGenresQuery();
   const dispatch = useDispatch();
   const { genIdOrCatName } = useSelector((state) => state.genreOrCategory);
-  console.log("genOrCat", genIdOrCatName);
+
 
   const categories = [
     { label: "Popular", value: "popular" },
