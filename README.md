@@ -36,6 +36,5 @@ You need to clone the master branch of then navigate to the project folder.
 You will need to install the dependencies listed in the package.json
 ```
 npm install or yarn install
-
 ```
 
