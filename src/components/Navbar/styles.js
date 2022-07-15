@@ -1,6 +1,6 @@
 import { makeStyles } from "@mui/styles";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 export default makeStyles((theme) => ({
   toolbar: {
@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
     justifyContent: "space-between",
     marginLeft: "240px",
     [theme.breakpoints.down("sm")]: {
-      marginLeft: 0,
+      marginLeft: '0',
       flexWrap: "wrap",
     },
   },

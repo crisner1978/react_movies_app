@@ -1,26 +1,27 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { Actors, MovieInfo, Movies, Profile } from './'
-import useStyles from './styles'
+import { Actors, MovieInfo, Movies, Navbar, Profile } from "./";
+import useStyles from "./styles";
 
 const App = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
+      <Navbar />
       <main className={classes.content}>
-      <div className={classes.toolbar} />
+        <div className={classes.toolbar} />
         <Switch>
-          <Route exact path='/movie/:id'>
+          <Route exact path="/movie/:id">
             <MovieInfo />
           </Route>
-          <Route exact path='/actors/:id'>
+          <Route exact path="/actors/:id">
             <Actors />
           </Route>
-          <Route exact path='/'>
+          <Route exact path={["/", "/approved"]}>
             <Movies />
           </Route>
-          <Route exact path='/profile/:id'>
+          <Route exact path="/profile/:id">
             <Profile />
           </Route>
         </Switch>
