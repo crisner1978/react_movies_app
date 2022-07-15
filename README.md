@@ -1,1 +1,1 @@
-# React Movies App - CWR
+# Reactflix Movies App - CWR

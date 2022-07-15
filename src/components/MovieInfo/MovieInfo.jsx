@@ -61,6 +61,7 @@ const MovieInfo = () => {
     movie_id: id,
   });
 
+  console.log("watchlistMovies", watchlistMovies)
   const [isMovieFavorited, setMovieFavorited] = useState(false);
   const [isMovieWatchlisted, setMovieWatchlisted] = useState(false);
 
