@@ -6,7 +6,7 @@ import useStyles from "./styles";
 
 const App = () => {
   const classes = useStyles();
-  useAlan()
+  useAlan();
 
   return (
     <div className={classes.root}>
@@ -14,18 +14,11 @@ const App = () => {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>
-          <Route exact path="/movie/:id">
-            <MovieInfo />
-          </Route>
-          <Route exact path="/actors/:id">
-            <Actors />
-          </Route>
-          <Route exact path={["/", "/approved"]}>
-            <Movies />
-          </Route>
-          <Route exact path="/profile/:id">
-            <Profile />
-          </Route>
+          <Route exact path="/movie/:id" component={MovieInfo} />
+          <Route exact path="/actors/:id" component={Actors} />
+          <Route exact path="/approved" component={Movies} />
+          <Route exact path="/" component={Movies} />
+          <Route exact path="/profile/:id" component={Profile} />
         </Switch>
       </main>
     </div>
